@@ -1,8 +1,9 @@
-// Action creator
+// named Export => import with { selectSong  }
 export const selectSong = song => {
-  // Return an action
-  return {
-    type: "SONG_SELECTED",
-    payload: song
-  };
+    // Return an action
+    return {
+        type: 'SONG_SELECTED',
+        payload: song
+    };
 };
+

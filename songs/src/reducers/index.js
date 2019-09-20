@@ -1,26 +1,38 @@
-import { combineReducers } from "redux";
+import { combineReducers } from 'redux';
 
-const songsReducer = () => {
-  return [
-    { title: "Main Title", duration: "1:51" },
-    { title: "Blood of My Blood", duration: "3:35" },
-    { title: "Light of the Seven", duration: "9:49" },
-    { title: "The Tower (Bonus Track)", duration: "2:33" },
-    { title: "Onbowed, Unbent, Unbroken (Bonus Track)", duration: "1:44" },
-    { title: "I Choose Violence (Bonus Track)", duration: "1:48" },
-    { title: "Hodor (Bonus Track)", duration: "2:24" }
-  ];
+const songsReducer = () =>  {
+    return [
+        {
+            title: 'Smells like Teen Spirit',
+            duration: '4:05'
+        },
+        {
+            title: 'The Pot',
+            duration: '8:15'
+        }
+        ,
+        {
+            title: 'No  One Knows ',
+            duration: '5:30'
+        }
+        ,
+        {
+            title: 'Insane in the Brain',
+            duration: '3:40'
+        }
+    ];
 };
 
 const selectedSongReducer = (selectedSong = null, action) => {
-  if (action.type === "SONG_SELECTED") {
-    return action.payload;
-  }
+    if (action.type === 'SONG_SELECTED'){
+        return action.payload;
+    }
+    return selectedSong;
 
-  return selectedSong;
 };
 
 export default combineReducers({
-  songs: songsReducer,
-  selectedSong: selectedSongReducer
+    songs: songsReducer,
+    selectedSong: selectedSongReducer
+
 });
