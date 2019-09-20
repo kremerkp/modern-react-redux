@@ -4,7 +4,7 @@ import PostList from "./PostList";
 const App = () => {
   return (
     <div className="ui container">
-      Hello App.JS
+      App
       <div>
         <PostList />
       </div>
