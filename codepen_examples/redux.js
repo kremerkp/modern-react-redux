@@ -1,9 +1,19 @@
 console.clear(); 
 
-// People dropping off a from (Action Creators)
+// ACTION_CREATOR "PRODUCES AN" => ACTION "GETS FED TO" => DISPATCH "FORWARD THE ACTION TO" => REDUCERS "CREATES NEW" => STATE
+
+/*
+action: { 
+  type: [describes what change we want to make to our data], 
+  payload: [context of what change we want to make] 
+}
+*/
+
+
+// People dropping off a form (Action Creators)
 const createPolicy = (name, amount) => {
   return {
-  // ACtion ( a form in our analaogy)
+  // Action ( a form in our analogy)
   // Payload => context about the submitted form
   type: 'CREATE_POLICY',
   payload:  {
