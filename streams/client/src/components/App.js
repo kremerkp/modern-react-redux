@@ -1,10 +1,11 @@
 import React from 'react';
-import { BrowserRouter, Route, Link } from 'react-router-dom';
-import StreamCreate from './StreamCreate';
-import StreamDelete from './StreamDelete';
-import StreamEdit from './StreamEdit';
-import StreamList from './StreamList';
-import StreamShow from './StreamShow';
+import { BrowserRouter, Route } from 'react-router-dom';
+import StreamCreate from './streams/StreamCreate';
+import StreamDelete from './streams/StreamDelete';
+import StreamEdit from './streams/StreamEdit';
+import StreamList from './streams/StreamList';
+import StreamShow from './streams/StreamShow';
+import Header from './Header';
 
 /*
 BrowserRouter =>
@@ -15,9 +16,10 @@ MemoryRouter => hides url
 
 const App = () => {
     return (
-        <div>
+        <div className="ui container">
             <BrowserRouter>
                 <div>
+                    <Header/>
                     <Route path="/" exact component={StreamList} />
                     <Route path="/stream/new" exact  component={StreamCreate} />
                     <Route path="/stream/edit"  exact component={StreamEdit} />
