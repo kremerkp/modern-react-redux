@@ -8,6 +8,7 @@ class SongList extends Component {
             return(
                 <div className="item" key={song.title}>
                     <div className="right floated content">
+                         {/* calling action selectSong with passing the selected song  */}
                         <button
                             className="ui button primary"
                             onClick={ () => this.props.selectSong(song) }
@@ -23,11 +24,12 @@ class SongList extends Component {
         });
     }
     render (){
-        //console.log(this.props);
+        // console.log(this.props);
         return <div className="ui divided list">{this.renderList()}</div>
     }
 }
 
+// entire Redux store state
 const mapStateToProps = (state) => {
     //console.log(state);
     return {songs: state.songs};
