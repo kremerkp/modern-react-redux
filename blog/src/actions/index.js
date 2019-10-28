@@ -1,5 +1,6 @@
 import _ from "lodash";
 import jsonPlaceholder from "../apis/jsonPlaceholder";
+import { async } from "q";
 
 export const fetchPostAndUser = () => async (dispatch, getState) => {
   await dispatch(fetchPosts());
@@ -19,6 +20,14 @@ export const fetchPostAndUser = () => async (dispatch, getState) => {
     .value();
 };
 
+export const fetchPosts2 = () => {
+  return async function(dispatch, getState){
+    const response = await jsonPlaceholder.get('/posts');
+    dispatch({type: 'FETCH_POSTS', payload: response.data})
+  };
+};
+
+// equivalent to fetchPosts2 above with es16 refactoring
 export const fetchPosts = () => async dispatch => {
   const response = await jsonPlaceholder.get("/posts");
   dispatch({ type: "FETCH_POSTS", payload: response.data });
@@ -35,13 +44,3 @@ export const fetchUser = id => async dispatch => {
 //   const response = await jsonPlaceholder.get(`/users/${id}`);
 //   dispatch({ type: "FETCH_USER", payload: response.data });
 // });
-
-/*
-    export const fetchPosts = () => {
-    return function(dispatch, getStaet) {
-        const promise = jsonPlaceholder.get("/posts");
-        dispatch({ tpye: "FETCH_POSTS", payload: promise });
-    };
-
-    };
-*/

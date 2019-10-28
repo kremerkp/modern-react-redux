@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
+// thunk delay the dispatch of the action and returns a function
 import { createStore, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
 

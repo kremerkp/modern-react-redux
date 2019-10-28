@@ -1,6 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
 import { fetchPostAndUser } from "../actions";
+import { fetchUser } from "../actions";
+import { fetchPosts } from "../actions";
 
 import UserHeader from "./UserHeader";
 
@@ -32,6 +34,7 @@ class PostList extends React.Component {
   }
 }
 
+// posts where define in the reducer combineReducers {posts, users}
 const mapStateToProps = state => {
   return { posts: state.posts };
 };
