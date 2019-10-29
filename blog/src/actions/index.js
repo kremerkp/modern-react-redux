@@ -1,6 +1,5 @@
 import _ from "lodash";
 import jsonPlaceholder from "../apis/jsonPlaceholder";
-import { async } from "q";
 
 export const fetchPostAndUser = () => async (dispatch, getState) => {
   await dispatch(fetchPosts());
