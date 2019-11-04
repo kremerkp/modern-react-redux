@@ -8,7 +8,6 @@ import {
         FETCH_STREAM,
         EDIT_STREAM
     } from './types'
-import { async } from 'q';
 
 export const signIn = (userid) =>{
     return {
